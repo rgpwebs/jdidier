@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section id="banner">
+    <div class="content">
+        <article>
+            <header class="major">
+                <h1>{{ .Title }}</h1>
+            </header>
+            {{ if isset .Params "author"}}
+                <p class="small">By {{ .Params.author }}</p>
+            {{end}}
+            {{ .Content }}
+        </article>
+        {{ if .Data.Pages }}
+        <h3>Table of Contents</h3>
+        <ol>
+            {{ range .Data.Pages }}
+                <li>
+                    <a href="{{.Permalink}}">{{.Title}}</a>
+                </li>
+            {{ end }}
+        </ol>
+        {{ end }}
+</div>
+</section>
+{{ end }}

@@ -1,0 +1,63 @@
+<!-- Menu -->
+<nav id="menu">
+    <header class="major">
+        <h2>Menu</h2>
+    </header>
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            {{ $isCurrent := $currentPage.IsMenuCurrent "main" . }}
+            {{ $hasCurrent := $currentPage.HasMenuCurrent "main" . }}
+            <li>
+                {{ if .HasChildren }}
+                <span class="opener {{if ($isCurrent) or ($hasCurrent) }}active{{end}}" href="{{.URL}}">{{ .Name }}</span>
+                <ul>
+                    <li{{if ($isCurrent) or ($hasCurrent) }} class="current" {{end}}>
+                            <a href="{{.URL}}">Index</a>
+                    </li>
+                    {{ range .Children }}
+                    <li{{if ($isCurrent) or ($hasCurrent) }} class="current" {{end}}>
+                        <a href="{{.URL}}"> {{ .Name }} </a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ else }}
+                <a {{if $isCurrent}}class="current"{{end}} href="{{.URL}}">{{ .Name }}</a>
+                {{ end }}
+            </li>
+        {{ end }}
+        <li>
+            <a target="_blank" href="https://scholar.google.es/citations?user=1hjLUfgAAAAJ">Publications</a>
+        </li>
+    </ul>
+    <p></p>
+    <header class="major">
+        <h2>Teaching</h2>
+    </header>
+        <ul>
+            {{ range .Site.Menus.teaching }}
+            {{ $isCurrent := $currentPage.IsMenuCurrent "teaching" . }}
+            {{ $hasCurrent := $currentPage.HasMenuCurrent "teaching" . }}
+            <li>
+                {{ if .HasChildren }}
+                <span class="opener {{if ($isCurrent) or ($hasCurrent) }}active{{end}}">{{ .Name }}</span>
+                <ul>
+                    <li{{if ($isCurrent) or ($hasCurrent) }} class="current" {{end}}>
+                            <a href="{{.URL}}">Index</a>
+                    </li>
+                    {{ range .Children }}
+                    <li {{if ($isCurrent) or ($hasCurrent) }} class="current"{{end}}>
+                        <a href="{{.URL}}"> {{ .Name }} </a>
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ else }}
+                <a {{if $isCurrent }}class="current"{{end}} href="{{.URL}}">{{ .Name }}</a>
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+<p></p>
+<!-- Calendar -->
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=MONTH&amp;height=300&amp;wkst=2&amp;bgcolor=%23f5f6f7&amp;src=kj38bfq1lteh4022h8auupd3s8%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=Europe%2FMadrid" style="border-width:0" width="250" height="300" frameborder="0" scrolling="no"></iframe>
+</nav>
