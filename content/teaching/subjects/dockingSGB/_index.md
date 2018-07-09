@@ -10,6 +10,7 @@ menu:
 
 ## Hands-on 1 - Introduction to UCSF Chimera.
 
+[Download Slides here](https://drive.google.com/file/d/1c5HLCtYUCxjTUsMZdZ63Hzud_8vxxnqQ/view?usp=sharing)
 
 ***Any*** modelling of biochemical processes starts with a good understanding of the **structural properties** of the molecules under study. Available pdb structures of the protein, their atomic resolution, their state of complexation are, in between others, the key variables to analyse prior to modelling. Before getting into the core of the protein-ligand docking exercise, we first need to get used to the exloration of biomolecular constructs with efficient visualizing, analysis and building tools.
 
