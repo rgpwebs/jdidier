@@ -84,8 +84,46 @@ A major part of what modelers present has a tremendous graphical relevance. Pict
 
 Provide some clear pictural representations of 1) the protein on its whole 2) the binding site 3) the interactions of the binding site and any idea you have to get a 2dimensional impression of the 3dimensional reality.
 
+# Days 2 and 3 #
 
-###Additional works ###
+
+Autodock is a flexible ligand-protein docking program which basically runs as a two steps procedure: the calculation of the map of interactions of the binding site with some general atom types (performed with autogrid) and the posing of the lligand respecting this map of interaction (performed with autodock).
+
+Some of the  algorithms detailed during the  theoretical courses are available in Autodock. The actual version of the program  (the version we will use here) is the version 4.0 which provides with important new features for docking prospect like protein residue flexibility and high quality scoring functions.
+
+In this tutorial, you will be introduced the docking approaches by  undertaking undertaking on your own some docking experiments on the androgen binding receptor seen in the tutorial I. The different steps for the initial study as well as the possible extension of the work are summarize below.
+
+In the recent years, Autodock has been updated by an external group to give raise to Autodock vina. This version has a slightly accelerated version of the code and is easier to perform. UCSF Chimera has followed the lead and now has an integrated interface into the same program. 
+
+Autodock scoring function is applied using an adapted AMBER force field therefore the atoms of the protein and the ligand have to be set up in accordance with  this ff. Autodock computes the possible interaction points in the binding site of the protein prior to exploring the conformations. Our next step is therefore to set up the grid.
+
+1. Ligand and Protein Set up 
+
+In Chimera, we need to prepare first the two structures indepently, the ligand and the receptor. To do so, following with what you learned during the previous day:
+
+- open the 2am9 structure
+- remove all ligands and water molecules (solvent)
+- once cleaned use the dock prep interface (Tools --> Surface/Binding Analysis --> DockPrep) to add hydrogen and clean any other possible problems (i.e. rotameric states, etc...)
+- then same the mol2 of the resulting receptor (i.e. with name receptor.mol2)
+
+Proceed the same way with the ligand (this time start by removing all the atoms of the protein and only keep the testosterone)
+
+
+2. Run the calculation
+
+Once both mol2 files have been generated, open them back in Chimera and then go to the same menu than before selection this time the **Autodock Vina** entry.
+
+A new window pops up. There, select the name of the output file in the ligand and receptor section. Double check that you correctly selected the right models for both receptors and ligand! Finally, you have to define the region of the space where the calculation will be performed. To do so, use the 3D handling of the mouse (middle button) for the protein region. 
+
+
+3. Analysis
+Once the calculation ends, a window will appear with the results of the docking. Open back the original structure and compare the predicted versus the original structures. 
+
+
+
+4. Look in the pdb at the structure of some mutant resistant in prostate cancer treatment. Look at the binding site form of the structure. What could you conclude? What about docking in this structure?
+
+### Additional works ###
 Once you have get used to with this initial structure, compare it with other crystalographic structures related to it (look at the PDB webpage to do so). From the different interesting things we could do here, we can look at the structure obtained with different androgen like compounds (e.g. testosterone in pdb 2ama) compare the binding poses of the ligand for the different structure, also compared to some prostate treatment compound, with the structure some mutants of the protein that are resistant to prostate treatment, and finally with a progesterone binding protein. Discuss on the nature of the structures, the type of interactions between the ligand and the protein, etc.
 
 In this case aligning the proteins will be a particularly useful tools to do so. The matchmaker tool (in Tools --> Structure Comparison --> MatchMaker) is a possible option. The related command line is *mm #num_reference_model #num_target_model*)
